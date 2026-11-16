@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Act Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">§</span>
+      <div>
+        <h1>AI Act Assistant</h1>
+        <p>Règlement (UE) 2024/1689 · réponses sourcées, citations vérifiées</p>
+      </div>
+    </div>
+    <div class="status" id="status">connexion…</div>
+  </header>
+
+  <main>
+    <section class="chat">
+      <div id="messages">
+        <div class="welcome" id="welcome">
+          <h2>Posez une question sur le règlement européen sur l'IA</h2>
+          <p>L'assistant cherche dans les 113 articles, 180 considérants et 13 annexes, répond en citant
+             ses sources, puis chaque citation est contrôlée contre les passages réellement lus.</p>
+          <div class="examples">
+            <button>Mon chatbot doit-il indiquer aux utilisateurs qu'ils parlent à une IA ?</button>
+            <button>Quelles pratiques d'IA sont interdites ?</button>
+            <button>Quelle est la définition d'un déployeur ?</button>
+            <button>Un outil de tri de CV est-il un système à haut risque ?</button>
+            <button>Quelles sont les amendes maximales prévues ?</button>
+            <button>Que dit l'article 14 sur le contrôle humain ?</button>
+          </div>
+        </div>
+      </div>
+      <form id="form">
+        <textarea id="input" rows="1" placeholder="Votre question…" maxlength="2000" autofocus></textarea>
+        <button type="submit" id="send">Envoyer</button>
+      </form>
+      <p class="disclaimer">Information sur le texte du règlement, pas un conseil juridique.</p>
+    </section>
+
+    <aside id="panel" hidden>
+      <div class="panel-head">
+        <div>
+          <strong id="panel-label"></strong>
+          <span id="panel-title"></span>
+        </div>
+        <button id="panel-close" aria-label="Fermer">×</button>
+      </div>
+      <div id="panel-context"></div>
+      <pre id="panel-text"></pre>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
